@@ -11,9 +11,11 @@ use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\SlideshowController;
 use Illuminate\Support\Facades\Route;
 
+
 // ── PUBLIC ROUTES ─────────────────────────────────────────────
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login',    [AuthController::class, 'login']);
+Route::post('/auth/google', [AuthController::class, 'googleLogin']);
 
 // Public news & categories (read-only)
 Route::get('/news',            [NewsController::class, 'index']);
